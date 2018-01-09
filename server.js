@@ -1,6 +1,8 @@
 const express=require('express');
 const hbs=require('hbs');
 const fs=require('fs');
+
+const port= process.env.PORT || 3000;
 var app=express();
 
 
@@ -63,6 +65,6 @@ app.get('/bad', (req ,res) => {
         'errorMessage' : 'unable to handle request'
     });
 });
-app.listen(3000,()=>{
-    console.log('server start on port 3000');
+app.listen(port,()=>{
+    console.log(`server start on port ${port}`);
 });
